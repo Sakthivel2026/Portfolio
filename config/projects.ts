@@ -44,7 +44,7 @@ export const Projects: ProjectInterface[] = [
       "MongoDB",
       "Typescript",
       "Tailwind CSS",
-      "Express.js",
+      "express.js",
       "Vercel",
     ],
     startDate: new Date("2024-01-01"),

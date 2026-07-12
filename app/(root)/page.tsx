@@ -17,7 +17,7 @@ import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
 import { featuredSkills } from "@/config/skills";
 import { cn } from "@/lib/utils";
-import profileImg from "@/public/profile-img.png.png";
+import profileImg from "@/public/profile-img.png";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
