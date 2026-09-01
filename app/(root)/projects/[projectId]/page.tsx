@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import { Icons } from "@/components/common/icons";
 import ProjectDescription from "@/components/projects/project-description";
+import ProjectImage from "@/components/projects/project-image";
 import { buttonVariants } from "@/components/ui/button";
 import ChipContainer from "@/components/ui/chip-container";
 import CustomTooltip from "@/components/ui/custom-tooltip";
@@ -87,11 +88,25 @@ export default async function Project({ params }: ProjectPageProps) {
         </div>
       </div>
 
-      <img
-        src={project.companyLogoImg}
-        alt={project.companyName}
-        className="my-8 rounded-md border bg-muted transition-colors max-w-full md:max-w-[500px] mx-auto block h-auto"
-      />
+      {project.demoVideo ? (
+        <div className="my-8 overflow-hidden rounded-xl border bg-black shadow-lg">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={project.demoVideoPoster || project.companyLogoImg}
+            className="w-full h-auto aspect-video rounded-lg"
+            src={project.demoVideo}
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      ) : (
+        <ProjectImage
+          src={project.companyLogoImg}
+          alt={project.companyName}
+        />
+      )}
 
       <div className="mb-7 ">
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
@@ -104,36 +119,43 @@ export default async function Project({ params }: ProjectPageProps) {
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
           Description
         </h2>
-        {/* {<project.descriptionComponent />} */}
         <ProjectDescription
           paragraphs={project.descriptionDetails.paragraphs}
           bullets={project.descriptionDetails.bullets}
+          keyFeatures={project.descriptionDetails.keyFeatures}
+          technicalArchitecture={project.descriptionDetails.technicalArchitecture}
+          architectureImg={project.descriptionDetails.architectureImg}
+          architectureFlow={project.descriptionDetails.architectureFlow}
+          developmentHighlights={project.descriptionDetails.developmentHighlights}
+          outcomeParagraphs={project.descriptionDetails.outcomeParagraphs}
         />
       </div>
 
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
-          Page Info
-        </h2>
-        {project.pagesInfoArr.map((page, ind) => (
-          <div key={ind}>
-            <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
-              <Icons.star className="h-5 w-5 mr-2" /> {page.title}
-            </h3>
-            <div>
-              <p>{page.description}</p>
-              {page.imgArr.map((img, ind) => (
-                <img
-                  src={img}
-                  key={ind}
-                  alt={img}
-                  className="my-4 rounded-md border bg-muted transition-colors max-w-full md:max-w-[500px] mx-auto block h-auto"
-                />
-              ))}
+      {project.pagesInfoArr && project.pagesInfoArr.length > 0 && (
+        <div className="mb-7">
+          <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
+            Page Info
+          </h2>
+          {project.pagesInfoArr.map((page, ind) => (
+            <div key={ind}>
+              <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
+                <Icons.star className="h-5 w-5 mr-2" /> {page.title}
+              </h3>
+              <div>
+                <p>{page.description}</p>
+                {page.imgArr.map((img, ind) => (
+                  <ProjectImage
+                    src={img}
+                    key={ind}
+                    alt={img}
+                    className="my-4"
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">

@@ -72,68 +72,136 @@ export default function IndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
 
-      <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 h-screen flex items-center">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center -mt-20">
-          <div className="rounded-full mb-0 md:mb-2 w-[60%] max-w-[16rem] border-8 border-primary overflow-hidden aspect-square">
-            <Image
-              src={profileImg}
-              height={256}
-              width={256}
-              className="w-full h-full object-cover object-center"
-              alt="Sakthivel - Applied AI Engineer Portfolio"
-              priority
-            />
-          </div>
-          <AnimatedText
-            as="h1"
-            delay={0.2}
-            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Sakthivel
-          </AnimatedText>
-          <AnimatedText
-            as="h3"
-            delay={0.4}
-            className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
-          >
-            Full Stack Developer
-          </AnimatedText>
-          <div className="mt-4 max-w-[42rem] text-center">
-            <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Building scalable web applications and reliable software solutions.
-            </p>
+      <section className="relative overflow-hidden pt-12 pb-16 md:py-20 lg:py-28 min-h-[85vh] flex items-center">
+        {/* Abstract organic background elements for hero */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* LEFT SIDE: Content & Call to Action */}
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
+            {/* Status indicator */}
+            <AnimatedText delay={0.05}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs sm:text-sm font-medium mb-4 backdrop-blur-sm">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                Available for opportunities
+              </div>
+            </AnimatedText>
+
+            {/* Greeting Tag */}
+            <AnimatedText
+              as="p"
+              delay={0.1}
+              className="text-xs sm:text-sm font-semibold tracking-widest text-primary/80 uppercase mb-2 font-mono"
+            >
+              HELLO, I'M
+            </AnimatedText>
+
+            {/* Name */}
+            <AnimatedText
+              as="h1"
+              delay={0.2}
+              className="font-heading text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground"
+            >
+              Sakthivel
+            </AnimatedText>
+
+            {/* Role */}
+            <AnimatedText
+              as="h2"
+              delay={0.3}
+              className="font-heading text-xl sm:text-2xl lg:text-3xl font-semibold text-primary/90 mt-2"
+            >
+              Full Stack Developer
+            </AnimatedText>
+
+            {/* Description */}
+            <AnimatedText delay={0.4}>
+              <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                I’m a passionate Full Stack Developer focused on building modern, responsive, and user-friendly web applications. I work with React, Next.js, Node.js, Express.js, and MongoDB, turning ideas into scalable and reliable digital experiences while continuously improving my development skills.
+              </p>
+            </AnimatedText>
+
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <AnimatedText delay={0.5}>
+                <Link
+                  href="https://drive.google.com/uc?export=download&id=1VIz-qV91AM42OSTMx7dV0nAp9CUJcpni"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    buttonVariants({ size: "lg" }),
+                    "rounded-xl gap-2 font-semibold shadow-md hover:shadow-lg transition-all"
+                  )}
+                  aria-label="Download Resume"
+                >
+                  <Icons.post className="w-5 h-5" /> Resume
+                </Link>
+              </AnimatedText>
+
+              <AnimatedText delay={0.6}>
+                <Link
+                  href="/contact"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "rounded-xl gap-2 font-semibold transition-all hover:bg-accent"
+                  )}
+                  aria-label="Contact Sakthivel"
+                >
+                  <Icons.contact className="w-5 h-5" /> Contact Me
+                </Link>
+              </AnimatedText>
+            </div>
           </div>
 
-          <div className="flex flex-col mt-10 items-center justify-center sm:flex-row sm:space-x-4 gap-3">
-            <AnimatedText delay={0.6}>
-              <Link
-                href="https://drive.google.com/uc?export=download&id=1VIz-qV91AM42OSTMx7dV0nAp9CUJcpni"
-                download
-                className={cn(buttonVariants({ size: "lg" }))}
-                aria-label="Download resume"
+          {/* RIGHT SIDE: Circular Profile Image & Abstract Background Design */}
+          <div className="lg:col-span-5 flex justify-center items-center relative py-6">
+            <div className="relative w-full max-w-[340px] sm:max-w-[420px] aspect-square flex items-center justify-center">
+              {/* Organic Curved SVG Backdrop */}
+              <svg
+                viewBox="0 0 500 500"
+                className="absolute inset-0 w-full h-full text-muted/60 dark:text-muted/30 animate-pulse-slow"
+                aria-hidden="true"
               >
-                <Icons.post className="w-4 h-4 mr-2" /> Resume
-              </Link>
-            </AnimatedText>
-            <AnimatedText delay={0.8}>
-              <Link
-                href={"/contact"}
-                rel="noreferrer"
-                className={cn(
-                  buttonVariants({
-                    variant: "outline",
-                    size: "lg",
-                  })
-                )}
-                aria-label="Contact Sakthivel"
-              >
-                <Icons.contact className="w-4 h-4 mr-2" /> Contact
-              </Link>
-            </AnimatedText>
+                <path
+                  fill="currentColor"
+                  d="M390,290Q350,330,310,380Q270,430,210,410Q150,390,110,340Q70,290,80,220Q90,150,140,110Q190,70,260,80Q330,90,380,140Q430,190,390,290Z"
+                />
+              </svg>
+
+              {/* Decorative Geometric Layered Circles */}
+              <div className="absolute inset-2 sm:inset-4 rounded-full border-2 border-dashed border-primary/20 animate-spin-slow pointer-events-none" />
+              <div className="absolute -inset-2 sm:-inset-4 rounded-full border border-primary/10 pointer-events-none" />
+
+              {/* Glowing Accent Glow Ring */}
+              <div className="absolute w-[80%] h-[80%] rounded-full bg-primary/10 blur-2xl -z-10" />
+
+              {/* Circular Profile Image Frame */}
+              <div className="relative z-10 w-[72%] h-[72%] rounded-full border-4 sm:border-8 border-background shadow-2xl overflow-hidden bg-muted group">
+                <Image
+                  src={profileImg}
+                  fill
+                  sizes="(max-width: 768px) 280px, 340px"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  alt="Sakthivel - Full Stack Developer Profile Photo"
+                  priority
+                />
+              </div>
+
+              {/* Interactive Floating Badge (Inspired by reference screenshot) */}
+              <div className="absolute bottom-6 left-2 sm:left-4 z-20 bg-background/95 dark:bg-background/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-border shadow-xl flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+                  ⚡
+                </div>
+                <div>
+                  <div className="font-bold text-sm text-foreground">Full Stack</div>
+                  <div className="text-xs text-muted-foreground">React & Node.js</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <AnimatedText delay={1.2}>
-            <Icons.chevronDown className="h-6 w-6 mt-10" />
-          </AnimatedText>
         </div>
       </section>
       <AnimatedSection

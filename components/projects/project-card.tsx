@@ -12,12 +12,12 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="relative p-6 w-full bg-background border border-border rounded-lg h-full flex flex-col">
-      <div className="relative w-full h-[200px] flex-shrink-0">
+    <div className="relative p-6 w-full bg-background border border-border rounded-lg h-full flex flex-col group">
+      <div className="relative w-full h-[200px] flex-shrink-0 overflow-hidden rounded-lg border border-border">
         <Image
-          className="rounded-lg border border-border object-cover"
+          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
           src={project.companyLogoImg}
-          alt="img"
+          alt={project.companyName}
           fill
         />
       </div>
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <h5 className="text-2xl font-bold tracking-tight text-foreground">
           {project.companyName}
         </h5>
-        <p className="line-clamp-3 font-normal text-muted-foreground flex-grow">
+        <p className="line-clamp-4 font-normal text-muted-foreground flex-grow">
           {project.shortDescription}
         </p>
         <div className="flex gap-2 flex-wrap">
@@ -37,13 +37,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Icons.chevronRight className="w-4 ml-1" />
           </Button>
         </Link>
-      </div>
-      <div className="absolute bottom-4 right-4 p-3 rounded-full bg-background border border-border hidden md:block">
-        {project.type === "Personal" ? (
-          <Icons.userFill className="h-4 w-4" />
-        ) : (
-          <Icons.work className="h-4 w-4" />
-        )}
       </div>
     </div>
   );
