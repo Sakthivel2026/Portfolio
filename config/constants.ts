@@ -65,7 +65,11 @@ export type ValidSkills =
   | "SQLite"
   | "bcrypt"
   | "JSON"
-  | "Readline";
+  | "Readline"
+  | "Mongoose"
+  | "Clerk"
+  | "Cloudinary"
+  | "Inngest";
 
 export type ValidCategory =
   | "Full Stack"
@@ -74,7 +78,13 @@ export type ValidCategory =
   | "UI/UX"
   | "Web Dev"
   | "Mobile Dev"
-  | "3D Modeling";
+  | "3D Modeling"
+  | "E-Commerce"
+  | "Web Application"
+  | "Node.js • TCP Networking"
+  | "Node.js • Networking"
+  | "Node.js"
+  | "TCP Networking";
 
 export type ValidExpType = "Personal" | "Professional";
 
