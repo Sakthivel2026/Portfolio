@@ -51,44 +51,70 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.typescript,
   },
   {
-    name: "Javascript",
+    name: "Java",
     description:
-      "Create interactive and dynamic web experiences with the versatile scripting language.",
+      "Build robust and scalable applications using object-oriented programming and modern Java development practices.",
+    rating: 5,
+    icon: Icons.java,
+  },
+  {
+    name: "Flutter",
+    description:
+      "Create cross-platform mobile applications with responsive interfaces and reusable Flutter widgets.",
+    rating: 5,
+    icon: Icons.flutter,
+  },
+  {
+    name: "PostgreSQL",
+    description:
+      "Design, query, and manage reliable relational databases with powerful SQL and PostgreSQL features.",
+    rating: 5,
+    icon: Icons.postgresql,
+  },
+  {
+    name: "Docker",
+    description:
+      "Containerize applications and services for consistent development, deployment, and scalable environments.",
+    rating: 5,
+    icon: Icons.docker,
+  },
+  {
+    name: "JavaScript",
+    description:
+      "Build interactive and dynamic web applications using modern JavaScript, asynchronous programming, and reusable components.",
     rating: 5,
     icon: Icons.javascript,
   },
   {
-    name: "HTML 5",
+    name: "MySQL",
     description:
-      "Structure web content beautifully with the latest version of HyperText Markup Language.",
-    rating: 4,
+      "Design and manage relational databases using SQL for reliable data storage, querying, and application development.",
+    rating: 5,
+    icon: Icons.mysql,
+  },
+  {
+    name: "HTML5",
+    description:
+      "Build semantic and accessible web page structures using modern HTML5 elements and standards.",
+    rating: 5,
     icon: Icons.html5,
   },
   {
-    name: "CSS 3",
+    name: "CSS",
     description:
-      "Style web pages creatively with the latest iteration of Cascading Style Sheets.",
-    rating: 4,
+      "Create responsive and visually engaging interfaces using modern CSS layouts, styling, animations, and responsive design.",
+    rating: 5,
     icon: Icons.css3,
   },
   {
     name: "Tailwind CSS",
     description:
-      "Design beautiful, modern websites faster with a utility-first CSS framework.",
+      "Build modern and responsive user interfaces efficiently using utility-first CSS classes and reusable design patterns.",
     rating: 5,
     icon: Icons.tailwindcss,
   },
-  {
-    name: "MySQL",
-    description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
-    rating: 2,
-    icon: Icons.mysql,
-  },
 ];
 
-export const skills = skillsUnsorted
-  .slice()
-  .sort((a, b) => b.rating - a.rating);
+export const skills = skillsUnsorted;
 
-export const featuredSkills = skills.slice(0, 6);
+export const featuredSkills = skills;

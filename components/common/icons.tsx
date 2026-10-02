@@ -32,6 +32,7 @@ import {
 import { AiFillStar } from "react-icons/ai";
 import { BiLaugh, BiSolidUser } from "react-icons/bi";
 import { BsInfoCircle, BsQuestionCircle } from "react-icons/bs";
+import { FaJava } from "react-icons/fa";
 import {
   HiBriefcase,
   HiOutlineExternalLink,
@@ -43,7 +44,9 @@ import {
   SiAngular,
   SiBootstrap,
   SiCss3,
+  SiDocker,
   SiExpress,
+  SiFlutter,
   SiGmail,
   SiGraphql,
   SiHtml5,
@@ -56,6 +59,7 @@ import {
   SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
+  SiPostgresql,
   SiReact,
   SiRedux,
   SiSocketdotio,
@@ -120,6 +124,10 @@ export const Icons = {
   socketio: SiSocketdotio,
   tailwindcss: SiTailwindcss,
   typescript: SiTypescript,
+  java: FaJava,
+  flutter: SiFlutter,
+  postgresql: SiPostgresql,
+  docker: SiDocker,
   gmail: SiGmail,
   twitter: SiX,
   linkedin: SiLinkedin,
