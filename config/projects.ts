@@ -139,12 +139,12 @@ export const Projects: ProjectInterface[] = [
     ],
     startDate: new Date("2024-04-01"),
     endDate: new Date("2024-10-01"),
-    companyLogoImg: "/projects/convot/quickcart.png",
+    companyLogoImg: "/projects/Quickcart/quickcart.png",
     githubLink: "https://github.com/Sakthivel2026/QuickCart",
     websiteLink: "https://github.com/Sakthivel2026/QuickCart",
     demoVideo:
       "https://res.cloudinary.com/dbx2ewipf/video/upload/v1788064876/quickcart_video_-_Made_with_Clipchamp.mp4",
-    demoVideoPoster: "/projects/convot/quickcart-video-thumbnail.png",
+    demoVideoPoster: "/projects/Quickcart/quickcart-video-thumbnail.png",
     pagesInfoArr: [],
     descriptionDetails: {
       paragraphs: [
@@ -257,7 +257,7 @@ export const Projects: ProjectInterface[] = [
           ],
         },
       ],
-      architectureImg: "/projects/convot/quickcart-architecture.png",
+      architectureImg: "/projects/Quickcart/quickcart-architecture.png",
       architectureFlow: [
         {
           title: "Customer Flow",
@@ -329,10 +329,10 @@ export const Projects: ProjectInterface[] = [
     ],
     startDate: new Date("2024-08-01"),
     endDate: new Date("2025-01-01"),
-    companyLogoImg: "/projects/niya/terminal-chat-thumbnail.png",
+    companyLogoImg: "/projects/Terminal_chat/terminal-chat-thumbnail.png",
     demoVideo:
       "https://res.cloudinary.com/dbx2ewipf/video/upload/v1788066182/terminal_chat.mp4",
-    demoVideoPoster: "/projects/niya/terminal-chat-video-thumbnail.png",
+    demoVideoPoster: "/projects/Terminal_chat/terminal-chat-video-thumbnail.png",
     githubLink: "https://github.com/Sakthivel2026/terminal-chat",
     websiteLink: "https://github.com/Sakthivel2026/terminal-chat",
     pagesInfoArr: [],
@@ -423,7 +423,7 @@ export const Projects: ProjectInterface[] = [
           ],
         },
       ],
-      architectureImg: "/projects/niya/terminal-chat-architecture.png",
+      architectureImg: "/projects/Terminal_chat/terminal-chat-architecture.png",
       architectureFlow: [
         {
           title: "Authentication Flow",
